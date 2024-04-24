@@ -59,6 +59,7 @@ body {
 .colum2{
     align-content: center;
     display: flex;
+    justify-content: center;
 
 }
 .MM2{
