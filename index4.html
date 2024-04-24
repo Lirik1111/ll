@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo&display=swap">
+    <meta name="viewport" content="width=320, initial-scale=1.0"/>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+    <title>На 5</title>
+</head>
+<body id="wh" >
+    <article id="app">
+        <div class="header">
+            <div class="head_wr">
+                <div class="row">
+                    <div class="w-2">
+                        <div id="logo">
+                            <img src="imeg/Logo.png" alt="Логотип">
+                        </div>
+                    </div>
+                    <div class="w-2 al_right">
+                        <div id="search">
+                            <div id="search2" class="flex">
+                                <input type="text" placeholder="Search">
+                                <button>Submit</button>
+                            </div>
+                        </div>
+                        <div id="menu">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="">Company Profile</a></li>
+                                <li><a href="index2.html">Products</a></li>
+                                <li><a href="">Services</a></li>
+                                <li><a href="">R&D</a></li>
+                                <li><a href="index4.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div id="sl3"></div>
+        </div>
+        <div class="tabel">
+            <table class="table table-bordered ">
+                <thead>
+                  <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="cartitem in cart">
+                    <td><img :src="'img/' + cartitem.image" class="small_img" /></td>
+                    <td>{{cartitem.title}}</td>
+                    <td>{{cartitem.short_text}}</td>
+                    <td class="dellbut">
+                      <button @click="removeFromCart(cartitem.id)" class="">
+                        Х
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        
+        <!-- Products -->
+        <div id="products22">
+            <div class="roww">
+                <div class="w-7">
+                    <h1 class="M1">Contact us</h1>
+                    <p class="M2">×××××</p>
+                </div>
+            </div>
+        </div>
+        <div class="row " v-if="orderPlaced">
+            <div class="colum">
+              <h1>
+                Form successfully submitted
+              </h1>
+              <h1>Your details</h1>
+              <div class="colum2">
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Name</th>
+                        <td>{{contactFields.name}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Company Name</th>
+                        <td>{{contactFields.company}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Position</th>
+                        <td>{{contactFields.position}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">City</th>
+                        <td>{{contactFields.city}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Country</th>
+                        <td>{{contactFields.country}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Profession</th>
+                        <td>{{contactFields.profession}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Profession Other</th>
+                        <td>{{contactFields.professionOther}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Interests</th>
+                        <td>{{contactFields.interests}}</td>
+                      </tr>
+    
+                    </tbody>
+                  </table>
+              </div>
+              
+            </div>
+          </div>
+    
+        </div><form @submit.prevent="makeOrder" v-if="!orderPlaced">
+            <div class="tomato_cl22">
+                <div class="tomato_cl_wr">
+                    <div class="tomato_wh">
+                        <div class="hg">
+                            <div class="tomato_plan">
+                                <div class="">
+                                    <h5 class="M1_1">Name *
+                                    </h5>
+                                    <input class="init" type="text"  id="inputName" required="" placeholder=""
+                                    v-model="contactFields.name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tomato_wh">
+                        <div class="">
+                            <div class="tomato_plan">
+                                <div class="">
+                                    <h5 class="M1_1">Company Name
+                                    </h5>
+                                    <input class="init" type="text"   id="inputCompanyName" required="" placeholder=""
+                                    v-model="contactFields.company">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tomato_wh">
+                        <div class="">
+                            <div class="tomato_plan">
+                                <div class="">
+                                    <h5 class="M1_1">Position
+                                    </h5>
+                                    <input class="init" type="text"  id= "inputPosition " required="" placeholder=""
+                                    v-model="contactFields.position">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tomato_wh">
+                        <div class="">
+                            <div class="tomato_plan">
+                                <div class="">
+                                    <h5 class="M1_1">City
+                                    </h5>
+                                    <input class="init" type="text" id="inputCity" required="" placeholder=""
+                                    v-model="contactFields.city">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tomato_wh">
+                        <div class="">
+                            <div class="tomato_plan">
+                                <div class="">
+                                    <h5 class="M1_1">Country
+                                    </h5>
+                                    <input class="init" type="text" id="inputCountry" required="" placeholder=""
+                                    v-model="contactFields.country">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tomato_wh">
+                        <div class="">
+                            <div class="tomato_plan">
+                                <div class="">
+                                    <h5 class="M1_1">Telephone
+                                    </h5>
+                                    <input class="init" type="text" id="inputTelephone" required="" placeholder=""
+                                    v-model="contactFields.telephone">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tomato_wh">
+                        <div class="">
+                            <div class="tomato_plan">
+                                <div class="">
+                                    <h5 class="M1_1">Email *
+                                    </h5>
+                                    <input class="init" type="text" id="inputEmail" required="" placeholder=""
+                                    v-model="contactFields.email">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="tomato_cl_wr">
+                    <div class="tomato_wh2">
+                        <div class="">
+                            <div class="tomato_plan">
+                                <div class="">
+                                    <h5 class="M1_1">You are a
+                                    </h5>
+                                    
+                                    <select required="" id="inputRole" class="init1_1 " v-model="contactFields.profession">
+                                        <option>seed produser</option>
+                                        <option>seed</option>
+                                        <option>garlic</option>
+                                        <option>waterltmon</option>
+                                        <option>....</option>
+                                        <option value="" /></select>
+                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tomato_wh2">
+                        <div class="">
+                            <div class="tomato_plan">
+                                <div class="">
+                                    <h5 class="M1_1">If other, please specify
+                                    </h5>
+                                    <input class="init1_1" type="text" id="inputOtherRole" required="" placeholder=""
+                                    v-model="contactFields.professionOther">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tomato_wh2">
+                        <div class="">
+                            <div class="tomato_plan">
+                                <h5 class="M1_1">You are interested in
+                                </h5>
+                                <div class="form-floating">
+                                    <textarea style="height: 270px" class="init2" required="" placeholder=""
+                                      id="floatingTextarea2" v-model="contactFields.interests"></textarea>
+                                  </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="typcode">
+                        <div class="tomato_wh2">
+                            <div class="">
+                                <div class="tomato_plan2">
+                                    <div class="">
+                                        <h5 class="M1_1">Please type this code
+                                        </h5>
+                                        <div class="capcha">
+                                            <img src="imeg/image 12.png">
+                                            <input class="init3" type="text" id="inputCaptcha">
+                                            <button class="send" type="submit">Send Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <main id="lower-conten">
+            <div class="otstup">
+                <div class="wrapper">
+                    <div  class="gr">
+                        <div class="w-33">
+                            <p class="subheading">Our Address</p>
+                            <hr class="hr1">
+                            <p>AGRIDERA Seeds & Agriculture Ltd.<br> P.O Box 103,<br> Gedera 70750, Israel.<br> Telephone: +972 8 944 9222</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+       
+        <!-- Lower Content -->
+     
+        <!-- Footer -->
+        <div class="foot">
+            <div class="foot_up">
+                <div id="text_foot_up">
+                    <ul>
+                        <li><a href="">PROFILE</a></li>
+                        <li><a href="">MANAGEMENT</a></li>
+                        <li><a href="">PRODUCTS</a></li>
+                        <li><a href="">R&D</a></li>
+                        <li><a href="">LINKS</a></li>
+                        <li><a href="">SITEMAP</a></li>
+                        <li><a href="">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div id="Icon">
+                    <a href=""><img id="Icon_1" class="image" src="imeg/Ico_in.png"></a>
+                    <a href=""><img id="Icon_2" class="image" src="imeg/Ico_inst.png"></a>
+                    <a href=""><img id="Icon_3" class="image" src="imeg/Ico_tube.png"></a>
+                    <a href=""><img id="Icon_4" class="image" src="imeg/Ico_tw.png"></a>
+                    <a href=""><img id="Icon_5" class="image" src="imeg/Ico_fb.png"></a>
+                </div>
+            </div>
+            <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
+        </div>
+
+    </article>
+    <script src="Js/main.js"></script>
+    
+    
+</body>
+</html>
+

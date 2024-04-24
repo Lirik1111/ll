@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo&display=swap">
+    <meta name="viewport" content="width=320, initial-scale=1.0"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+    
+    <title>На 5</title>
+</head>
+<body >
+    <!-- Header -->
+    <div class="header">
+        <div class="head_wr">
+            <div class="row">
+                <div class="w-2">
+                    <div id="logo">
+                        <img src="imeg/Logo.png" alt="Логотип">
+                    </div>
+                </div>
+                <div class="w-2 al_right">
+                    <div id="search">
+                        <div id="search2" class="flex">
+                            <input type="text" placeholder="Search">
+                            <button>Submit</button>
+                        </div>
+                    </div>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="">Company Profile</a></li>
+                            <li><a href="index2.html">Products</a></li>
+                            <li><a href="">Services</a></li>
+                            <li><a href="">R&D</a></li>
+                            <li><a href="index4.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Content -->
+    <div class="content">
+        <div id="sl2"></div>
+    </div>
+    
+    <!-- Products -->
+    <div id="products">
+        <div class="row">
+            <div class="w-7">
+                <h1 class="M1">Agridera Fresh Market Tomato Hybrids</h1>
+                <p class="M2">×××××</p>
+            </div>
+        </div>
+    </div>
+    <div id="products_2">
+        <div class="row">
+            <p id="M3">Agridera aims to be one of the world's leading companies in the breeding, production, and marketing of tomato seeds. We invest <br> in research and development to provide solutions to growers and consumers in numerous countries around the world.<br>
+                In particular, we breed improved disease-resistant cultivars adapted to different markets globally.<br>
+                <br>
+                Currently, emphasis is placed on combining Tomato Yellow Leaf Curl Virus (TYLCV) and Tomato Spotted Wilt Virus (TSWV) resistances <br>with other soil borne diseases into superior tomato breeding lines and hybrids. Moreover, comprehensive efforts are being undertaken to <br>develop varieties resistance to TBRFV virus (Tomato Brown Rugose Fruit Virus). <br>
+                <br>
+                In terms of horticultural traits, breeding is for earliness, different fruit sizes, firmness, red fruit color, flavor, crack resistance, shelf life,<br> and high/low temperature fruit set. Combinations of quality features and disease resistance are sought in a variety of types, namely<br> round and elongated shapes. </p>
+        </div>
+    </div>
+    <div id="products_2-2">
+        <div class="row_w">
+            <img src="imeg/Rectangle 27.png">
+            <p id="M3_3">Agirdera Tomato breeding programs are focusing on three main segments: Greenhouse Indeterminate Tomatoes, Open-field <br>Indeterminate Tomatoes, and Bush Type Open-field Tomatoes.</p>
+        </div>
+    </div>
+    <div id="x_3_text">
+        <div class="gr_2">
+            <div class="w-3_3">
+                <p class="subheading">Greenhouse Tomato Breeding Program</p>
+                <hr class="hr11">
+                <p class="p1">This breeding is aimed for the Spanish and Turkish markets. For single and cluster picks, round fruit shape and resistances of TYLCV, TSWV, Nematodes and FORL (Fusarium oxysporum f.sp. radicis-lycopersici). Some hybrids may include more resistances, such as Cladosporium and Leveillula Taurica (Lv). </p>
+            </div>
+            <div class="w-3_3">
+                <p class="subheading">Open-field Indeterminate Tomatoes</p>
+                <hr class="hr11">
+                <p class="p1">This breeding is for Brazilian, Moroccan, and Turkish markets. The main focus is on large round shape fruits (200 grams plus); and resistances of TYLCV, TSWV, Nematodes and FORL. In the near future, F3 (Fusarium oxysporum f.sp. lycopersici) will be included as basic resistance in our cultivars.</p>
+            </div>
+            <div class="w-3_3">
+                <p class="subheading">Open-field Bush Type<br> Tomatoes</p>
+                <hr class="hr11">
+                <p class="p1">This breeding is for Mediterranean markets. We breed round and elongated shapes, standard sizes (140- 180 grams), and beef sizes (min. 180 grams up to 300 grams and more). We combine the resistances of TYLCV, TSWV and Nematodes as basic resistances in our hybrids. However, some hybrids may include more resistances, such as Cladosporium and Leveillula Taurica (Lv).</p>
+            </div>
+        </div>
+    </div>
+    <div id="products_2-2">
+        <div class="row_w">
+            <img src="imeg/Rectangle 27.png">
+            <p id="M3_3">Agridera operates through international and local distributers around the world. </p>
+        </div>
+    </div>
+    <div class="tomato_cl">
+        <div class="tomato_cl_wr">
+            <article id="app">
+                <div class="tomato_wh" v-if="products" v-for=" p in products">
+                    <div class="">
+                        <div class="">
+                            <a :href="'index3.html#'+p.id" class="none"><img :src="'img/'+p.image" class="vinograd" alt="..." ></a>
+                        </div>
+                        <div class="tomato_name">
+                            <div class="tomato_inf">
+                                <a :href="'https://lirik1111.github.io/Lirik1111-My_3_Lirik.github.io/#'+p.id" class="none"> <h5 class="M1_1">{{p.title}}</h5></a>
+                                <a :href="'https://lirik1111.github.io/Lirik1111-My_3_Lirik.github.io/#'+p.id" class="none"><p class="M2">{{p.short_text}}</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+
+        </div>
+        
+    </div>
+   
+    <!-- Lower Content -->
+ 
+    <!-- Footer -->
+    <div class="foot">
+        <div class="foot_up">
+            <div id="text_foot_up">
+                <ul>
+                    <li><a href="">PROFILE</a></li>
+                    <li><a href="">MANAGEMENT</a></li>
+                    <li><a href="">PRODUCTS</a></li>
+                    <li><a href="">R&D</a></li>
+                    <li><a href="">LINKS</a></li>
+                    <li><a href="">SITEMAP</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <div id="Icon">
+                <a href=""><img id="Icon_1" class="image" src="imeg/Ico_in.png"></a>
+                <a href=""><img id="Icon_2" class="image" src="imeg/Ico_inst.png"></a>
+                <a href=""><img id="Icon_3" class="image" src="imeg/Ico_tube.png"></a>
+                <a href=""><img id="Icon_4" class="image" src="imeg/Ico_tw.png"></a>
+                <a href=""><img id="Icon_5" class="image" src="imeg/Ico_fb.png"></a>
+            </div>
+        </div>
+        <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
+    </div>
+    <script src="Js/main.js"></script>
+</body>
+</html>
+

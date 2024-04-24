@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo&display=swap">
+    <meta name="viewport" content="width=320, initial-scale=1.0"/>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+    <title>На 5</title>
+</head>
+<body id="wh" >
+    <article id="app">
+         <!-- Header -->
+    <div class="header">
+        <div class="head_wr">
+            <div class="row">
+                <div class="w-2">
+                    <div id="logo">
+                        <img src="imeg/Logo.png" alt="Логотип">
+                    </div>
+                </div>
+                <div class="w-2 al_right">
+                    <div id="search">
+                        <div id="search2" class="flex">
+                            <input type="text" placeholder="Search">
+                            <button>Submit</button>
+                        </div>
+                    </div>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="">Company Profile</a></li>
+                            <li><a href="index2.html">Products</a></li>
+                            <li><a href="">Services</a></li>
+                            <li><a href="">R&D</a></li>
+                            <li><a href="index4.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Products -->
+    <div id="products_s">
+        <div class="row_w">
+            
+                <img src="imeg/Arrow 1.png" class="mmm">
+                <h1 class="M3"><a href="https://lirik1111.github.io/Lirik1111-My_second_Lirik.github.io/">Return to all tomatoes</a></h1>
+           
+        </div>
+    </div>
+
+    
+
+        </p>
+    <div class="tomato_cl2">
+        <div class="tomato_cl_wr">
+            <div class="">
+                <div class="">
+                        <div class="tomato_cll" >
+                            <p class="MM1" >
+                                {{product.title}}
+                                <br>
+                               
+                                <br>
+                            </p>
+                            <p class="mes2">××××× <br></p>
+                            <div id="poto2">
+                                <img src="imeg/Group 17.png" class="">
+                            <p class="M1_2">Very high yield and<br> excellent fruits quality!
+                            </div>
+                            </p>
+                            <div class="disp_line">
+                                <img :src="'img/'+product.image"  alt="..." class="im_hg">
+                            </div>
+                        </div>
+                </div>
+            </div>
+            
+            
+        </div>
+
+    </div>
+    <div class="main_block">
+        <div class="main_block_m" >
+            <div class="block">
+                <div class="align-left">
+                    <h2 class="h2">CHARACTERISTICS</h2>
+                    <article id="app">
+                        <div class="sp">
+                            <hr class="hr1">
+                            <ul >
+                                <li >
+                                    {{product.short_text}}
+                                </li>
+                                <li >
+                                    {{product.desc}}
+                                </li>
+                                <li>
+                                    IR: TYLCV 
+                                </li>
+                            </ul>
+                        </div>
+                    </article>    
+                
+            </div>
+        </div>
+        <div class="main_block_m" >
+            <button onclick="document.location='#'" class="btnpdf" @click.prevent="addToCart(product.id)"  v-if="!btnVisible">Add to cart</button>
+            <button onclick="document.location='index4.html'" class="btnpdf" v-if="btnVisible">
+                Go to cart
+              </button>
+        </div>
+    </div>
+    </div>
+    <div class="tomato_cl22">
+        <div class="tomato_cl_wr">
+            <div class="tomato_wh">
+                <div class="hg">
+                    <div class="tomato_plan">
+                        <div class="">
+                            <h5 class="M1_1">Plant
+                            </h5>
+                            <hr class="hr1">
+                            <ul >
+                                <li >
+                                    Strong vigor that provides good leaf coverage.
+                                </li>
+                                <li >
+                                    Very high productivity with good fruit setting.
+                                </li>
+                                <li>
+                                    Early matured variety. 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tomato_wh">
+                <div class="">
+                    <div class="tomato_plan">
+                        <div class="">
+                            <h5 class="M1_1">Fruit
+                            </h5>
+                            <hr class="hr1">
+                            <ul >
+                                <li >
+                                    Long shelf life on plant and post harvest.
+                                </li>
+                                <li >
+                                    Nice shiny attractive deep red color.
+                                </li>
+                                <li>
+                                    Average fruit size: 140 – 160 grams.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="tomato_cl_wr">
+            <div class="tomato_wh">
+                <div class="">
+                    <div class="tomato_plan">
+                        <div class="">
+                            <h5 class="M1_1">Cycle
+                            </h5>
+                            <hr class="hr1">
+                            <ul >
+                                <li >
+                                    Spring
+                                </li>
+                                <li >
+                                    Fall 
+                                </li>
+                                <li>
+                                    Winter
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tomato_wh">
+                <div class="">
+                    <div class="tomato_plan">
+                        <div class="">
+                            <h5 class="M1_1">Color
+                            </h5>
+                            <hr class="hr1">
+                            <ul >
+                                <li >
+                                    Red
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="otstup"></div>
+        
+        
+    </div>
+
+   
+    <!-- Lower Content -->
+ 
+    <!-- Footer -->
+    <div class="foot">
+        <div class="foot_up">
+            <div id="text_foot_up">
+                <ul>
+                    <li><a href="">PROFILE</a></li>
+                    <li><a href="">MANAGEMENT</a></li>
+                    <li><a href="">PRODUCTS</a></li>
+                    <li><a href="">R&D</a></li>
+                    <li><a href="">LINKS</a></li>
+                    <li><a href="">SITEMAP</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <div id="Icon">
+                <a href=""><img id="Icon_1" class="image" src="imeg/Ico_in.png"></a>
+                <a href=""><img id="Icon_2" class="image" src="imeg/Ico_inst.png"></a>
+                <a href=""><img id="Icon_3" class="image" src="imeg/Ico_tube.png"></a>
+                <a href=""><img id="Icon_4" class="image" src="imeg/Ico_tw.png"></a>
+                <a href=""><img id="Icon_5" class="image" src="imeg/Ico_fb.png"></a>
+            </div>
+        </div>
+        <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
+    </div>
+    </article>
+    
+       
+    <script src="Js/main.js"></script>
+</body>
+</html>
+
